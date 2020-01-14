@@ -1,7 +1,7 @@
 // game character objects
 var yoda = {
     name: "Yoda",
-    img_location: "",
+    img_location: "assets/images/yoda.jpg",
     health_points: 300,
     attack_power: 10,
     counter_attack_power: 10,
@@ -9,7 +9,7 @@ var yoda = {
 
 var lukeSkywalker = {
     name: "Luke Skywalker",
-    img_location: "",
+    img_location: "assets/images/luke.jpg",
     health_points: 135,
     attack_power: 15,
     counter_attack_power: 8,
@@ -17,7 +17,7 @@ var lukeSkywalker = {
 
 var darthVader = {
     name: "Darth Vader",
-    img_location: "",
+    img_location: "assets/images/vader.jpg",
     health_points: 140,
     attack_power: 7,
     counter_attack_power: 15,
@@ -25,7 +25,7 @@ var darthVader = {
 
 var darthMaul = {
     name: "Darth Maul",
-    img_location: "",
+    img_location: "assets/images/maul.jpg",
     health_points: 200,
     attack_power: 3,
     counter_attack_power: 20,
