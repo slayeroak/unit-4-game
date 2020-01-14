@@ -45,7 +45,7 @@ function printAllChar() {
     // run the function for each character in the character array
     $.each(characters_array, function(index, val) {
         // define character elements
-        var charEle = $("div class='character'></div>");
+        var charEle = $("<div class = 'character'></div>");
         var charName = $("<h4>" + val.name + "</h4>");
         var image = $("<img>");
         image.attr("src", val.img_location)
