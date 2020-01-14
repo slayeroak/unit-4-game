@@ -30,3 +30,38 @@ var darthMaul = {
     attack_power: 3,
     counter_attack_power: 20,
 };
+
+// Global Variables
+var characters_array = [yoda, lukeSkywalker, darthVader, darthMaul];
+ 
+
+
+// Game Functions
+
+// print all character function
+function printAllChar() {
+    // empty the characters div
+    $("#characters").empty();
+    // run the function for each character in the character array
+    $.each(characters_array, function(index, val) {
+        // define character elements
+        var charEle = $("div class='character'></div>");
+        var charName = $("<h4>" + val.name + "</h4>");
+        var image = $("<img>");
+        image.attr("src", val.img_location)
+        var hp = $("<p>" + val.health_points + "</p>");
+
+        // append name image hp to charEle, then append charEle to characters div
+        charEle.append(name, image, hp);
+        $("#characters").append(charEle);
+    })
+}
+
+$(document).ready(function(){
+
+    // step 1 define print all char function above and run inside the document read block
+    printAllChar();
+
+
+
+})
