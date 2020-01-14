@@ -33,10 +33,22 @@ var darthMaul = {
 
 // Global Variables
 var characters_array = [yoda, lukeSkywalker, darthVader, darthMaul];
+var user_char;
+var user_hp;
+var user_att_power;
  
 
 
 // Game Functions
+
+// determine which character that player selects
+function findCharacter(name){
+    for (var i = 0; i < characters_array.length; i++) {
+        if (characters_array[i].name === name) {
+            return characters_array[i];
+        }
+    }
+}
 
 // print all character function
 function printAllChar() {
@@ -57,10 +69,36 @@ function printAllChar() {
     })
 }
 
+// print enemies
+function printEnemy(user_char){
+    var all_characters = $(".character");
+    var character = $(user_char);
+
+    $.each(all_characters, function(index, val) {
+        if (! character.is(val)) {
+            $(val).attr("class", "enemy");
+            $("#enemies").append($(val));
+        }
+    });
+}
+
+
 $(document).ready(function(){
 
     // step 1 define print all char function above and run inside the document read block
     printAllChar();
+
+    // step 2 listen for click event when user clicks a character and run function to save char info into variables, then print enemies
+    $("#characters").on("click", ".character", function(){
+        //save chosen character's object info to variables and define a findCharacter function above
+        user_char = findCharacter($(this).find("h4").text());
+        console.log(this);
+        user_hp = user_char.health_points;
+        user_att_power = user_char.attack_power;
+   
+        //print the enemies, define print enemeny above
+        printEnemy(this);
+    });
 
 
 
