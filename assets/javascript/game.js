@@ -36,6 +36,8 @@ var characters_array = [yoda, lukeSkywalker, darthVader, darthMaul];
 var user_char;
 var user_hp;
 var user_att_power;
+var gameOver = false;
+
  
 
 
@@ -99,6 +101,12 @@ $(document).ready(function(){
    
         //print the enemies, define print enemeny above
         printEnemy(this);
+    });
+
+    //step 3 listen for enemy click event when user clicks an enemy and run function to safe enemy attributes
+    $("#enemies").on("click", ".enemy", function() {
+
+
     });
 
 
