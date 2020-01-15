@@ -121,6 +121,7 @@ $(document).ready(function(){
         }
     });
 
-
+    // step 4: Player attacks, defender loses hp, defender attacks user_char, user loses hp, 
+    // increase player atk user_att_power, defender loss, player loss, if no defender, if reset game
 
 })
