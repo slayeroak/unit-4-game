@@ -45,6 +45,7 @@ var user_att_power;
 function findCharacter(name){
     for (var i = 0; i < characters_array.length; i++) {
         if (characters_array[i].name === name) {
+            console.log(characters_array[i]);
             return characters_array[i];
         }
     }
@@ -58,7 +59,7 @@ function printAllChar() {
     $.each(characters_array, function(index, val) {
         // define character elements
         var charEle = $("<div class = 'character'></div>");
-        var charName = $("<h4>" + val.name + "</h4>");
+        var name = $("<h4>" + val.name + "</h4>");
         var image = $("<img>");
         image.attr("src", val.img_location)
         var hp = $("<p>" + val.health_points + "</p>");
