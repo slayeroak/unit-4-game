@@ -36,6 +36,9 @@ var characters_array = [yoda, lukeSkywalker, darthVader, darthMaul];
 var user_char;
 var user_hp;
 var user_att_power;
+var comp_defender
+var defender_hp
+var noDefender = true;
 var gameOver = false;
 
  
@@ -103,10 +106,19 @@ $(document).ready(function(){
         printEnemy(this);
     });
 
-    //step 3 listen for enemy click event when user clicks an enemy and run function to safe enemy attributes
+    //step 3 listen for enemy click event when user clicks an enemy and run function to store enemy attributes
     $("#enemies").on("click", ".enemy", function() {
+        // if there is no defender, define it, switch a global nodefender var, display it
+        if (noDefender) {
+            comp_defender = findCharacter($(this).find("h4").text());
+            defender_hp = comp_defender.health_points;
+            noDefender = false;
 
-
+            // enemy defender
+            $(this).attr("class", "defender");
+            $("#defenders").append(this);
+            $("#result").empty();
+        }
     });
 
 
