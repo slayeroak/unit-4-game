@@ -116,7 +116,7 @@ $(document).ready(function(){
 
             // enemy defender
             $(this).attr("class", "defender");
-            $("#defenders").append(this);
+            $("#defender").append(this);
             $("#result").empty();
         }
     });
