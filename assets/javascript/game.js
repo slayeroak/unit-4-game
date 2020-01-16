@@ -40,6 +40,7 @@ var comp_defender
 var defender_hp
 var noDefender = true;
 var gameOver = false;
+var backgroundImage
 
  
 
@@ -106,7 +107,8 @@ $(document).ready(function(){
         printEnemy(this);
 
         // change game background image to battle stage image
-        $("body").css("background-image", "url('assets/images/swbattlestage.jpg')");
+        backgroundImage = "assets/images/swbattlestage.jpg";
+        $(".box").css("background-image", "url(" + backgroundImage + ")");
     });
 
     //step 3 listen for enemy click event when user clicks an enemy and run function to store enemy attributes
