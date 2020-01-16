@@ -122,7 +122,7 @@ $(document).ready(function(){
     });
 
     // step 4: Player attacks, defender loses hp, defender attacks user_char, user loses hp, 
-    // increase player atk user_att_power, defender loss, player loss, if no defender,  if reset game
+    // increase player atk user_att_power, defender loss, player loss, if no defender,  game over, game not over
 
     // listen for attack button click and run function
     $("#attackButton").on("click"), function () {
