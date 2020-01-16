@@ -104,6 +104,9 @@ $(document).ready(function(){
    
         //print the enemies, define print enemeny above
         printEnemy(this);
+
+        // change game background image to battle stage image
+        $("body").css("background-image", "url('assets/images/swbattlestage.jpg')");
     });
 
     //step 3 listen for enemy click event when user clicks an enemy and run function to store enemy attributes
