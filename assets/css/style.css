@@ -1,3 +1,15 @@
 body {
     background-image: url("../images/starwarsbg.jpg");
 }
+
+#header {
+    width: 100%;
+    clear: both;
+    color: aliceblue;
+}
+
+#gameTitle {
+    float: right;
+    font-size: 3em;
+    margin-right: 2em;
+}
