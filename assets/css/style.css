@@ -1,5 +1,9 @@
 .box {
-    background-image: url("../images/starwarsbg.jpg");
+    background: url(../images/starwarsbg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #header {
@@ -12,4 +16,33 @@
     float: right;
     font-size: 3em;
     margin-right: 2em;
+}
+
+/* your character style */
+#characters {
+    width: 100%;
+    height: 10em;
+}
+
+.character, .enemy, .defender {
+    position: relative;
+    width: 12em;
+    height: 8em;
+    float: left;
+    border: green 2px solid;
+    text-align: center;
+}
+
+.character img, .enemy img, .defender img {
+    /* display: block; */
+    position: absolute;
+    left: 1.5em;
+    width: 9em;
+    height: 6em;
+}
+
+.character p, .enemy p, .defender p {
+    position: absolute;
+    bottom: 0;
+    left: 5.25em;
 }
