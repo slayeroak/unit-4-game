@@ -60,6 +60,7 @@ function displayMovieInfo() {
     }).then(function(response) {
         var res = response;
         console.log(res);
+        alert("You choose " + res.name);
 
     //   // Creating a div to hold the movie
     //   var movieDiv = $("<div class='movie'>");
