@@ -5,6 +5,7 @@ var yoda = {
     health_points: 300,
     attack_power: 10,
     counter_attack_power: 10,
+    apiSpot: 20,
 };
 
 var lukeSkywalker = {
@@ -13,6 +14,7 @@ var lukeSkywalker = {
     health_points: 135,
     attack_power: 15,
     counter_attack_power: 8,
+    apiSpot: 1,
 };
 
 var darthVader = {
@@ -21,6 +23,7 @@ var darthVader = {
     health_points: 140,
     attack_power: 7,
     counter_attack_power: 15,
+    apiSpot: 4,
 };
 
 var darthMaul = {
@@ -29,6 +32,7 @@ var darthMaul = {
     health_points: 200,
     attack_power: 3,
     counter_attack_power: 20,
+    apiSpot: 44,
 };
 
 // Global Variables
@@ -51,7 +55,7 @@ var swURL = "https://swapi.co/api/";
 function displayMovieInfo() {
 
     var movie = $(this).attr("data-name");
-    var queryURL = swURL + "people/1/";
+    var queryURL = swURL + "people/" + user_char.apiSpot + "/";
 
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
@@ -62,17 +66,18 @@ function displayMovieInfo() {
         console.log(res);
         alert("You choose " + res.name);
 
-    //   // Creating a div to hold the movie
-    //   var movieDiv = $("<div class='movie'>");
+      // Creating a div to hold the stats
+      var statDiv = $("<div class ='stats'>");
 
-    //   // Storing the rating data
-    //   var rating = response.Rated;
+      // Storing the rating data
+      var charName = response.name;
 
-    //   // Creating an element to have the rating displayed
-    //   var pOne = $("<p>").text("Rating: " + rating);
+      // Creating an element to have the rating displayed
+      var pOne = $("<p>").text("Name: " + charName);
 
-    //   // Displaying the rating
-    //   movieDiv.append(pOne);
+      // Displaying the rating
+      statDiv.append(pOne);
+      $("#stat-view").prepend(statDiv);
 
     //   // Storing the release year
     //   var released = response.Released;
