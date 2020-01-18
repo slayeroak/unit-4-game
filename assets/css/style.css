@@ -4,12 +4,12 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: white;
 }
 
 #header {
     width: 100%;
     clear: both;
-    color: aliceblue;
 }
 
 #gameTitle {
