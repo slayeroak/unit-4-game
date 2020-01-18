@@ -48,6 +48,9 @@
 }
 
 
-.stat-view {
+#stat-view {
+    float: right;
+    font-size: 3em;
+    margin-right: 2em;
 
 }

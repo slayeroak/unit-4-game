@@ -5,6 +5,7 @@ var yoda = {
     health_points: 300,
     attack_power: 10,
     counter_attack_power: 10,
+    // have to search the sw api via character number
     apiSpot: 20,
 };
 
@@ -14,6 +15,7 @@ var lukeSkywalker = {
     health_points: 135,
     attack_power: 15,
     counter_attack_power: 8,
+    // have to search the sw api via character number
     apiSpot: 1,
 };
 
@@ -23,6 +25,7 @@ var darthVader = {
     health_points: 140,
     attack_power: 7,
     counter_attack_power: 15,
+    // have to search the sw api via character number
     apiSpot: 4,
 };
 
@@ -32,6 +35,7 @@ var darthMaul = {
     health_points: 200,
     attack_power: 3,
     counter_attack_power: 20,
+    // have to search the sw api via character number
     apiSpot: 44,
 };
 
@@ -52,12 +56,12 @@ var swURL = "https://swapi.co/api/";
 
 // Game Functions
 
-function displayMovieInfo() {
+function  displayAPIInfo() {
 
     var movie = $(this).attr("data-name");
     var queryURL = swURL + "people/" + user_char.apiSpot + "/";
 
-    // Creating an AJAX call for the specific movie button being clicked
+    // Creating an AJAX call for the specific character enpoint
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -69,46 +73,15 @@ function displayMovieInfo() {
       // Creating a div to hold the stats
       var statDiv = $("<div class ='stats'>");
 
-      // Storing the rating data
+      // Storing the api name
       var charName = response.name;
 
-      // Creating an element to have the rating displayed
+      // Creating an element to have the api name displayed
       var pOne = $("<p>").text("Name: " + charName);
 
-      // Displaying the rating
+      // appending the api name to the stat div 
       statDiv.append(pOne);
       $("#stat-view").prepend(statDiv);
-
-    //   // Storing the release year
-    //   var released = response.Released;
-
-    //   // Creating an element to hold the release year
-    //   var pTwo = $("<p>").text("Released: " + released);
-
-    //   // Displaying the release year
-    //   movieDiv.append(pTwo);
-
-    //   // Storing the plot
-    //   var plot = response.Plot;
-
-    //   // Creating an element to hold the plot
-    //   var pThree = $("<p>").text("Plot: " + plot);
-
-    //   // Appending the plot
-    //   movieDiv.append(pThree);
-
-    //   // Retrieving the URL for the image
-    //   var imgURL = response.Poster;
-
-    //   // Creating an element to hold the image
-    //   var image = $("<img>").attr("src", imgURL);
-
-    //   // Appending the image
-    //   movieDiv.append(image);
-
-    //   // Putting the entire movie above the previous movies
-    //   $("#movies-view").prepend(movieDiv);
-      
     });
 }
 
@@ -168,7 +141,9 @@ $(document).ready(function(){
         user_hp = user_char.health_points;
         user_att_power = user_char.attack_power;
 
-        displayMovieInfo();
+
+        // displays starwars api info
+        displayAPIInfo();
    
         //print the enemies, define print enemeny above
         printEnemy(this);
